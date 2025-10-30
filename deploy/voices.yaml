@@ -1,0 +1,12 @@
+base_url: https://r2.alkahest.ai/voice
+
+characters:
+  rally:
+    en:
+      - name: default
+        key: rally/rally-en-default.wav
+  alchemist:
+    jp:
+      - name: happy
+        key: alchemist/alchemist-jp-happy.wav
+

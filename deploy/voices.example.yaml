@@ -1,0 +1,35 @@
+# Cloudflare R2 fetch configuration example
+
+r2:
+  # Optional path prefix inside the bucket (e.g., "gpt-sovits/voices").
+  prefix: ""
+
+# Define characters, languages, and samples.
+# Supported API languages: en, ja, ko, zh
+# Aliases you can use here (will be normalized): jp->ja, kr->ko, cn->zh
+
+characters:
+  rally:
+    en:
+      - name: default
+        key: rally-en-default.wav
+    jp:
+      - name: happy
+        key: alchemist-jp-happy.wav
+
+# Add more characters/languages/samples as needed.
+# Example multi-language skeleton:
+#  hero:
+#    en:
+#      - name: calm
+#        key: hero/en/calm.wav
+#    jp:
+#      - name: happy
+#        key: hero/jp/happy.wav
+#    kr:
+#      - name: tense
+#        key: hero/kr/tense.wav
+#    cn:
+#      - name: narrator
+#        key: hero/cn/narrator.wav
+

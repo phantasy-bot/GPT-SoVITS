@@ -1,0 +1,18 @@
+[Unit]
+Description=GPT-SoVITS API v2
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+User=YOUR_USER
+Group=YOUR_GROUP
+WorkingDirectory=/opt/GPT-SoVITS
+EnvironmentFile=/opt/GPT-SoVITS/.env
+ExecStart=/usr/bin/bash /opt/GPT-SoVITS/deploy/start_api.sh --bind ${API_HOST} --port ${API_PORT} --config GPT_SoVITS/configs/tts_infer.yaml
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
+
