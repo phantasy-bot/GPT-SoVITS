@@ -57,3 +57,11 @@ Notes
 - Models are placed under GPT_SoVITS/pretrained_models; defaults are configured in GPT_SoVITS/configs/tts_infer.yaml.
 - For Chinese TTS tools (G2PW), install.sh can download extras; see README.md for ASR/UVR5 optional models.
 
+Cloudflare Tunnel + Access
+
+- Keep the API bound to localhost (default 127.0.0.1). Expose it securely via Cloudflare Tunnel and protect with Zero Trust Access.
+- See deploy/cloudflare/ for a ready config and step‑by‑step guide.
+- Quick flow:
+  - Install cloudflared on the server.
+  - Create a named tunnel, map hostname to http://localhost:9880, and start cloudflared as a service.
+  - In Zero Trust > Access > Applications, add a Self‑hosted app for your hostname (e.g., tts.example.com) and add policies (emails/groups).

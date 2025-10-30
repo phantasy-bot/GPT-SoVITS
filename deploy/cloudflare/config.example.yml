@@ -1,0 +1,12 @@
+tunnel: gpt-sovits  # or the tunnel UUID
+credentials-file: /etc/cloudflared/<UUID>.json
+
+ingress:
+  - hostname: tts.example.com
+    service: http://localhost:9880
+    originRequest:
+      # Optional tweaks for upstream; defaults usually fine
+      connectTimeout: 30s
+      tcpKeepAlive: 30s
+  - service: http_status:404
+
