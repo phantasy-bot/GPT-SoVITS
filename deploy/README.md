@@ -6,6 +6,8 @@ Overview
 Quick Start
 
 - Prereqs: Python 3.10+, pip; FFmpeg in PATH; optional conda. For GPU, install a matching CUDA/driver first.
+- Clone this deploy branch for this repo.
+  - git clone -b deploy --single-branch https://github.com/phantasy-bot/GPT-SoVITS.git
 - Copy env and configure R2:
   - cp .env.example .env and fill R2 credentials.
   - cp deploy/voices.example.yaml deploy/voices.yaml and edit samples.
@@ -27,9 +29,28 @@ Example voices.yaml
     en:
       - name: default
         key: rally-en-default.wav
-    jp:
+    ja:
       - name: happy
-        key: alchemist-jp-happy.wav
+        key: rally-ja-happy.wav
+    ko:
+      - name: horny
+        key: rally-ko-horny.wav
+    ja:
+      - name: angry
+        key: rally-zh-angry.wav
+  maho:
+    en:
+      - name: default
+        key: maho-en-default.wav
+    ja:
+      - name: happy
+        key: maho-ja-happy.wav
+    ko:
+      - name: horny
+        key: maho-ko-horny.wav
+    ja:
+      - name: angry
+        key: maho-zh-angry.wav
 
 Security
 
@@ -57,7 +78,7 @@ Notes
 - Models are placed under GPT_SoVITS/pretrained_models; defaults are configured in GPT_SoVITS/configs/tts_infer.yaml.
 - For Chinese TTS tools (G2PW), install.sh can download extras; see README.md for ASR/UVR5 optional models.
 
-Cloudflare Tunnel + Access
+Cloudflare Tunnel
 
 - Keep the API bound to localhost (default 127.0.0.1). Expose it securely via Cloudflare Tunnel and protect with Zero Trust Access.
 - See deploy/cloudflare/ for a ready config and step‑by‑step guide.
